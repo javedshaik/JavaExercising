@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Library {
 	Scanner scan = new Scanner(System.in);
 	private ArrayList<Book> list;
+	private ArrayList<User> users;
 
 	private static int numOfUsers;
 	// Adds a book to the list
@@ -30,7 +31,22 @@ public class Library {
 		}
 
 	}
+	
+	public void addUser(User u){
+		users.add(u);
+	}
 
+	public boolean searchUser(String user){
+		boolean b = false;
+		for (int i = 0; i < users.size(); i++){
+			if (users.get(i).getUser().equals(user)){
+				b = true;
+			}
+			
+		}
+		return b;
+	}
+	
 	public int getNumUsers() {
 		return numOfUsers;
 	}
