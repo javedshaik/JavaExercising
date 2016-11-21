@@ -18,10 +18,16 @@ public class User {
 	public String getUser() {
 		return user;
 	}
+	
+	public String getUserName(User u) {
+		return u.user;
+	}
 
 	public void setUser(String libUser) {
 		this.user = libUser;
 	}
+	
+	
 
 	public void borrowBook(String title, String author) {
 		int found = 0;

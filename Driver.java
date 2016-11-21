@@ -31,7 +31,8 @@ public class Driver {
 			switch (input) {
 			case 1:
 				System.out.println("Please enter a username to create an account: ");
-				String libUser = scan.nextLine();
+				User user = new User(scan.nextLine());
+				lib.addUser(user);
 
 			case 2:
 				System.out.println("Enter the title of the book you wish to add: ");
