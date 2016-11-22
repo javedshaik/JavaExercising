@@ -32,6 +32,9 @@ public class Driver {
 			case 1:
 				System.out.println("Please enter a username to create an account: ");
 				String libUser = scan.nextLine();
+				User a = new User(libUser);
+				lib.addUser(a);
+				break;
 
 			case 2:
 				System.out.println("Enter the title of the book you wish to add: ");
@@ -41,9 +44,9 @@ public class Driver {
 				System.out.println("Enter the description of the book: ");
 				String bookDescription = scan.nextLine();
 				System.out.println();
-				Book a = new Book(bookTitle, bookAuthor, bookDescription);
+				Book b = new Book(bookTitle, bookAuthor, bookDescription);
 				System.out.println("Book successfully added");
-				lib.addBook(a);
+				lib.addBook(b);
 				break;
 			case 3:
 				System.out.println("Enter the title of the book you want to remove: ");
@@ -53,9 +56,27 @@ public class Driver {
 				lib.deleteBook(bookTitleRemove, bookAuthorRemove);
 				System.out.println("Sucessfully removed the book!");
 				break;
+			case 4:
+				System.out.println("Enter the user who wants to borrow the book");
+				String user = scan.nextLine();
+				System.out.println("Enter the title of the book name?");
+				String borrowTitle = scan.nextLine();
+				System.out.println("Enter the author of the book name?");
+				String borrowAuthor = scan.nextLine();
+				lib.borrowBook(user, borrowTitle, borrowAuthor);
+				System.out.println("You have successfully borrowed the book!");
+				break;
 			case 5:
 				System.out.println("These are all the books available in the library: ");
 				lib.printAvailableBooks();
+				break;
+			case 6:
+				System.out.println("Enter the user that wants to return the book");
+				String userReturn = scan.nextLine();
+				System.out.println("Enter the name of book you want to return: ");
+				String returnBook = scan.nextLine();
+				lib.returnBook(userReturn, returnBook);
+				System.out.println("You have successfull returned the book!");
 				break;
 			case 7:
 				System.out.println("Enter the book title you want to search: ");
